@@ -1,12 +1,19 @@
 import requests
 import time
 import json
+import os
+
+print(os.environ)
 
 APISERVER = "https://kubernetes.default.svc"
 SVCACC = "/var/run/secrets/kubernetes.io/serviceaccount"
 NS = open(SVCACC + "/namespace").readline()
 TOKEN = open(SVCACC + "/token").readline()
 headers = {"Authorization": "Bearer " + TOKEN}
+
+print(APISEVER)
+print(SVCACC)
+print(NS)
 
 while True:
     print('---------------------------------------------------------------------------------------------------------------')
