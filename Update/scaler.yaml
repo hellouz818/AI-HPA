@@ -8,5 +8,5 @@ spec:
     imagePullPolicy: Always
     name: scaler
     env:
-    - name: DEPLOYMENT
+    - name: SCALE_TARGET 
       value: test-nginx-deployment
