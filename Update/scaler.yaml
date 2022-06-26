@@ -7,3 +7,6 @@ spec:
   - image: scooter2022/tmp:1.1
     imagePullPolicy: Always
     name: scaler
+    env:
+    - name: DEPLOYMENT
+      value: test-nginx-deployment
