@@ -12,7 +12,7 @@ while True:
     
     # 모델에 데이터를 보내 replicas 를 받아옴
 
-    replicas = int(time.ctime().split(':')[-1][0])
+    replicas = int(time.ctime().split(':')[-1][0]) % 3 + 1
     scale(SCALE_TARGET, replicas)
     print(replicas)
 
