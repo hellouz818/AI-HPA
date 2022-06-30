@@ -14,7 +14,7 @@ def scale(replica=1):
     URL = APISERVER + "/apis/apps/v1/namespaces/" + NS + "/deployments/" + SCALE_TARGET
     PAYLOAD = "{\"spec\":{\"replicas\":" + str(replica) + "}}"
     HEADER = {"Authorization": "Bearer " + TOKEN, "Content-Type": "application/strategic-merge-patch+json"}
-    requests.patch(URL, PAYLOAD, headers=HEADER, verify=SVCACC+"/ca.crt"
+    requests.patch(URL, PAYLOAD, headers=HEADER, verify=SVCACC+"/ca.crt")
 
 while True:
     scale(int(time.ctime().split(':')[-1][0]))
